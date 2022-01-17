@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
     counter = 0
-    for data in my_list:
+    for i in range(x):
         try:
-            if data <= x:
-                print("{:d}".format(data), end="")
+            print("{:d}".format(my_list[i]), end="")
         except ValueError:
             pass
         except TypeError:
