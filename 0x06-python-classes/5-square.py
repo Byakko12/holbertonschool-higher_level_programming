@@ -2,9 +2,6 @@
 '''class square'''
 
 
-from sys import stdout
-
-
 class Square:
     '''define Square'''
 
