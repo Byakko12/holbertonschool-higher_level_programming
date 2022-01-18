@@ -2,4 +2,3 @@
 class Square:
     def square(self):
         Square.square
-        
