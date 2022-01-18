@@ -4,4 +4,3 @@ def raise_exception():
         raise
     except raise_exception:
         pass
-        
