@@ -49,5 +49,5 @@ class Rectangle:
             copy = copy[:-1]
         return copy
 
-    def repr(self):
+    def __repr__(self):
         return 'Rectangle({}, {})'.format(self.width, self.height)
