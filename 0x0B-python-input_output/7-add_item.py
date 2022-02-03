@@ -1,23 +1,18 @@
 #!/usr/bin/python3
-"""Method Json"""
-
-
-from sys import argv
 import json
-save_to_json_file = __import__('5-save_to_json_file.py').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+from sys import argv
+"""json"""
 
 
-filename = "add_item.json"
+save_json = __import__('7-save_to_json_file').save_to_json_file
+load_json = __import__('8-load_from_json_file').load_from_json_file
+
+filename = 'add_item.json'
 
 try:
-    f = "add_item.json"
-    obj = load_from_json_file(filename)
-except Exception:
-    obj = []
+    new = load_json(filename)
+except (ValueError, FileNotFoundError):
+    new = []
 
-for i in range(1, len(argv)):
-    obj.append(argv[i])
-
-with open(filename, 'w') as f:
-    json.dump(obj, f)
+new = new + argv[1:]
+save_json(new, filename)
