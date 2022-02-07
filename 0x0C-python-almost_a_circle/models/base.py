@@ -8,7 +8,6 @@ class Base:
 
     def __init__(self, id=None):
         """init atributte"""
-        self.id = id
         if id is not None:
             self.id = id
         else:
