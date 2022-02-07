@@ -7,6 +7,7 @@ from models.base import Base
 
 class Rectangle (Base):
     """class Rectangle"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """init atributte"""
         super().__init__(id)
@@ -91,9 +92,17 @@ class Rectangle (Base):
             .format(self.id, self.__x, self.__y,
                     self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update data"""
         data_args = ['id', 'width', 'height', 'x', 'y']
-
+           
+        if kwargs is not None:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
         for i in range(len(args)):
             setattr(self, data_args[i], args[i])
+
+    
+
+    
