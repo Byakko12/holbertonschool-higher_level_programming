@@ -95,14 +95,9 @@ class Rectangle (Base):
     def update(self, *args, **kwargs):
         """update data"""
         data_args = ['id', 'width', 'height', 'x', 'y']
-           
+
         if kwargs is not None:
             for key, value in kwargs.items():
-                if hasattr(self, key):
-                    setattr(self, key, value)
+                setattr(self, key, value)
         for i in range(len(args)):
             setattr(self, data_args[i], args[i])
-
-    
-
-    
