@@ -30,7 +30,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """update data"""
-        data_args = ['id', 'width', 'height', 'x', 'y']
+        data_args = ['id', 'size', 'x', 'y']
 
         if kwargs is not None:
             for key, value in kwargs.items():
