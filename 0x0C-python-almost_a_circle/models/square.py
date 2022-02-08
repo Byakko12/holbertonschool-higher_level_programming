@@ -15,6 +15,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """overloading square"""
-        return ("[Square] {:d} {:d}/{:d} - {:d}"
+        return ("[Square] ({:d}) {:d}/{:d} - {:d}"
                 .format(self.id, self.x, self.y, self.width))
-    
