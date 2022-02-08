@@ -66,7 +66,7 @@ class Rectangle (Base):
         """y property"""
         return self.__y
 
-    @x.setter
+    @y.setter
     def y(self, value):
         """y setter"""
         if type(value) != int:
@@ -95,7 +95,7 @@ class Rectangle (Base):
     def update(self, *args, **kwargs):
         """update data"""
         data_args = ['id', 'width', 'height', 'x', 'y']
-        
+
         if kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
