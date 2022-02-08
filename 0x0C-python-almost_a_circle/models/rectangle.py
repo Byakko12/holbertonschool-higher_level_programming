@@ -100,4 +100,5 @@ class Rectangle (Base):
             for key, value in kwargs.items():
                 setattr(self, key, value)
         for i in range(len(args)):
-            setattr(self, data_args[i], args[i])
+            if hasattr(self, data_args[i]):
+                setattr(self, data_args[i], args[i])
