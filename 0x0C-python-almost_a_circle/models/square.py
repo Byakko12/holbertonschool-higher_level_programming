@@ -2,7 +2,6 @@
 """Square"""
 
 
-from tarfile import RECORDSIZE
 from models.rectangle import Rectangle
 
 
@@ -17,3 +16,14 @@ class Square(Rectangle):
         """overloading square"""
         return ("[Square] ({:d}) {:d}/{:d} - {:d}"
                 .format(self.id, self.x, self.y, self.width))
+
+    @property
+    def size(self):
+        """size of the square"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """setter size of square"""
+        self.width = value
+        self.height = value
