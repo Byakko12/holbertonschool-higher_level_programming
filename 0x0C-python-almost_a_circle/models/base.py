@@ -4,6 +4,7 @@
 
 import json
 
+
 class Base:
     """contructor of class"""
     __nb_objects = 0
@@ -24,3 +25,15 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """save to file"""
+        filename = cls.__name__ + ".json"
+        result = []
+        if list_objs:
+            for objs in list_objs:
+                dictionary = objs.to_dictionary()
+                result.append(dictionary)
+        with open(filename, "w", encoding="utf-8") as file:
+            file.write(cls.to_json_string(result))
