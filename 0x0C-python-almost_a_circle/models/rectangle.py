@@ -88,17 +88,23 @@ class Rectangle (Base):
 
     def __str__(self):
         """return data"""
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}" \
-            .format(self.id, self.__x, self.__y,
-                    self.__width, self.__height)
+        return '[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(
+            self.id, self.x, self.y, self.width, self.height
+        )
 
     def update(self, *args, **kwargs):
         """update data"""
         data_args = ['id', 'width', 'height', 'x', 'y']
-
+        
         if kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
         for i in range(len(args)):
             if hasattr(self, data_args[i]):
                 setattr(self, data_args[i], args[i])
+
+    def to_dictionary(self):
+        """to dictionary"""
+        key_list = ["id", "width", "height", "x", "y"]
+        value_list = [self.id, self.width, self.height, self.x, self.y]
+        return dict(zip(key_list, value_list))
